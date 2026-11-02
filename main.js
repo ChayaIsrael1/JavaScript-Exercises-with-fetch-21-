@@ -14,8 +14,8 @@ const { getPostCommentsCount } = require("./ex9");
 const { todoAndUser } = require("./ex10");
 
 // getUser(1);
-getPost(1);
-// getUserEmail(1);
+//getPost(1);
+getUserEmail(1);
 // listUserTodos(3);
 // checkPostExists(1);
 // checkPostExists(9999);
