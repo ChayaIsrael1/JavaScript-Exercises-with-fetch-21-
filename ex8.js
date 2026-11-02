@@ -14,7 +14,12 @@
  * @returns {Promise} resolves after the result was printed (so whoever calls the function can wait for it)
  */
 function getUserFirstPost(userId) {
-  // write your code here
-}
+return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    .then((response) => response.json())
+    .catch((error) => console.log("Something went wrong:", error.message)), 
+  fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+    .then((response) => response.json())
+    .then((post) => console.log(`First post title: ${post[0].title}`))
+    .catch((error) => console.log("Something went wrong:", error.message))}
 
 module.exports = { getUserFirstPost };
