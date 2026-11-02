@@ -14,7 +14,12 @@
  * @returns {Promise} resolves after the result was printed (so whoever calls the function can wait for it)
  */
 function getPostCommentsCount(postId) {
-  // write your code here
-}
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    .then((response) => response.json())
+    .catch((error) => console.log("Something went wrong:", error.message)), 
+  fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
+    .then((response) => response.json())
+    .then((post) => console.log(`Post has ${post.length} comments`))
+    .catch((error) => console.log("Something went wrong:", error.message))}
 
 module.exports = { getPostCommentsCount };
