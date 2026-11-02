@@ -16,9 +16,13 @@
  */
 function checkPostExists(postId) {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-  .then(()=>console.log("Post exists"))
-  .catch(()=>console.log("Post not found") )
-  // write your code here
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Post not found"); 
+      }
+      console.log("Post exists");
+    })
+    .catch(() => {console.log("Post not found");});
 }
 
 module.exports = { checkPostExists };
