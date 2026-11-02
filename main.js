@@ -22,5 +22,5 @@ const { todoAndUser } = require("./ex10");
 // fetchWithDelay("https://jsonplaceholder.typicode.com/posts/1", 1000);
 // showKeys("https://jsonplaceholder.typicode.com/todos/1");
 // getUserFirstPost(1);
- getPostCommentsCount(1);
-// todoAndUser(1);
+//  getPostCommentsCount(1);
+ todoAndUser(1);
