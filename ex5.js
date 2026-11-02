@@ -15,6 +15,9 @@
  * @returns {Promise} resolves after the result was printed (so whoever calls the function can wait for it)
  */
 function checkPostExists(postId) {
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+  .then(()=>console.log("Post exists"))
+  .catch(()=>console.log("Post not found") )
   // write your code here
 }
 
