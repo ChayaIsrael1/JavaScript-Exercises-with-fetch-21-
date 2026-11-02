@@ -15,8 +15,8 @@ const { todoAndUser } = require("./ex10");
 
 // getUser(1);
 //getPost(1);
-getUserEmail(1);
-// listUserTodos(3);
+//getUserEmail(1);
+ listUserTodos(3);
 // checkPostExists(1);
 // checkPostExists(9999);
 // fetchWithDelay("https://jsonplaceholder.typicode.com/posts/1", 1000);

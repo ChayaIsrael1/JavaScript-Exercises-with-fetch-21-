@@ -17,7 +17,6 @@ function getUser(userId) {
     .then((response) => response.json())
     .then((user) => console.log(`User's name: ${user.name}`))
     .catch((error) => console.log("Something went wrong:", error.message));
-
 }
 
 module.exports = { getUser };

@@ -7,13 +7,16 @@
  * Show how many todos the user has
  *
  * Example output:
- *   User 3 has 20 todos
+ * User 3 has 20 todos
  *
  * @param {number} userId
  * @returns {Promise} resolves after the result was printed (so whoever calls the function can wait for it)
  */
 function listUserTodos(userId) {
-  // write your code here
+  return fetch(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`)
+  .then((response)=>response.json())
+  .then((todos)=>console.log(`User ${userId} has ${todos.length} todos`))
+  .catch((error) => console.log("Something went wrong:", error.message));
 }
 
 module.exports = { listUserTodos };
